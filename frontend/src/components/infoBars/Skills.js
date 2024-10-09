@@ -12,6 +12,7 @@ const Skills = ({ isOpen, toggle }) => {
           <li>Node.js</li>
           <li>PostgreSQL</li>
           <li>WebGL</li>
+          <li>Fifth Skill</li>
         </ul>
       </div>
     </div>

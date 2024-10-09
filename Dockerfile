@@ -1,38 +1,41 @@
-FROM ubuntu
-# WORKDIR /usr/local/app
+FROM node:20
 
-# Install the application dependencies
-#COPY requirements.txt ./
-RUN apt update
-RUN apt install mysql-server -y
-RUN apt install nginx -y
-RUN apt install nodejs -y
-RUN apt install nano -y
-RUN apt install npm -y
-RUN apt install curl -y
+# Update and install required packages
+RUN apt update && \
+    apt install postgresql postgresql-contrib -y && \
+    apt install nginx -y && \
+    apt install nano -y && \
+    apt install curl -y
 
+# Install concurrently globally to run multiple processes
+RUN npm install -g concurrently
+
+# Copy Nginx configuration
 COPY nginx.conf /etc/nginx/nginx.conf
 
-#COPY nginx.conf /etc/nginx/temp.conf
-#RUN cat temp.conf > /etc/nginx/nginx.conf
-#RUN rm /etc/nginx/temp.conf
+# Set the working directory for backend
+WORKDIR /usr/portfolio/backend
 
-RUN mkdir -p /usr/portfolio
+# Copy and install backend dependencies
+COPY backend/package.json backend/package-lock.json ./
+RUN npm install
 
-COPY frontend /usr/portfolio/frontend
+# Set the working directory for frontend
+WORKDIR /usr/portfolio/frontend
+
+# Copy and install frontend dependencies
+COPY frontend/package.json frontend/package-lock.json ./
+RUN npm install
+
+# Copy the rest of the application code after npm install
 COPY backend /usr/portfolio/backend
+COPY frontend /usr/portfolio/frontend
 
-RUN cd /usr/portfolio/frontend
-# RUN npm run start
+# Expose necessary ports
+EXPOSE 3000 5000
 
-# Copy in the source code
-#COPY src ./src
-#EXPOSE 5000
+# Set working directory to frontend for starting the React app
+WORKDIR /usr/portfolio/frontend
 
-# Setup an app user so the container doesn't run as the root user
-#RUN useradd app
-#USER app
-
-#CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
-
-CMD /bin/bash
+# Command to start both npm and nginx concurrently
+CMD ["concurrently", "\"npm run start\"", "\"nginx -g 'daemon off;'\""]
