@@ -1,46 +1,41 @@
-name: CI Pipeline
+name: Node.js CI - Frontend
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
-  frontend-build:
+  build:
     runs-on: self-hosted
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
     steps:
-      - uses: actions/checkout@v3
-      
-      # Set up Node.js for frontend
-      - name: Set up Node.js for frontend
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18.x'
-      
-      # Install frontend dependencies
-      - name: Install frontend dependencies
-        run: npm install
-        working-directory: ./Portfolio/Portfolio/frontend  # Path to your frontend folder
+    - uses: actions/checkout@v4
 
-      # Build frontend
-      - name: Build frontend
-        run: npm run build
-        working-directory: ./Portfolio/Portfolio/frontend
+    # Set up Node.js for the frontend
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
 
-  backend-build:
-    runs-on: self-hosted
-    steps:
-      - uses: actions/checkout@v3
-      
-      # Set up Node.js for backend
-      - name: Set up Node.js for backend
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18.x'
-      
-      # Install backend dependencies
-      - name: Install backend dependencies
-        run: npm install
-        working-directory: ./Portfolio/Portfolio/backend  # Path to your backend folder
+    # Install dependencies for the frontend project
+    - name: Install dependencies
+      run: npm install
+      working-directory: ./Portfolio/Portfolio/frontend  # Adjust this path if needed
 
-      # Run backend tests or start backend
-      - name: Test backend
-        run: npm test
-        working-directory: ./Portfolio/Portfolio/backend
+    # Build the frontend project
+    - name: Build frontend
+      run: npm run build --if-present
+      working-directory: ./Portfolio/Portfolio/frontend  # Adjust this path if needed
+
+    # Run frontend tests
+    - name: Run tests
+      run: npm test
+      working-directory: ./Portfolio/Portfolio/frontend  # Adjust this path if needed
