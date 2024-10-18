@@ -3,8 +3,6 @@ name: Node.js CI - Frontend
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
   build:
