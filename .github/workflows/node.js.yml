@@ -11,32 +11,33 @@ jobs:
     strategy:
       matrix:
         node-version: [22.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v4
 
-    # Set up Node.js for the frontend
+    # Set up Node.js globally for the runner (this step doesn't need a working-directory)
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
 
+    # Clear npm cache in the frontend directory
     - name: Clear npm cache
       run: npm cache clean --force
+      working-directory: ./Portfolio/Portfolio/frontend  # Set working directory to frontend
 
-    # Install dependencies for the frontend project
+    # Install dependencies in the frontend directory
     - name: Install dependencies
       run: npm install
-      working-directory: ./Portfolio/Portfolio/frontend  # Adjust this path if needed
+      working-directory: ./Portfolio/Portfolio/frontend  # Set working directory to frontend
 
     # Build the frontend project
     - name: Build frontend
       run: npm run build --if-present
-      working-directory: ./Portfolio/Portfolio/frontend  # Adjust this path if needed
+      working-directory: ./Portfolio/Portfolio/frontend  # Set working directory to frontend
 
     # Run frontend tests
     - name: Run tests
       run: npm test
-      working-directory: ./Portfolio/Portfolio/frontend  # Adjust this path if needed
+      working-directory: ./Portfolio/Portfolio/frontend  # Set working directory to frontend
