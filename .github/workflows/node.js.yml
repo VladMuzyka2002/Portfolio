@@ -20,11 +20,13 @@ jobs:
     - uses: actions/checkout@v4
 
     # Set up Node.js globally (this sets it up for the entire runner)
+ # Set up Node.js for the frontend
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: ./Portfolio/Portfolio/frontend/package-lock.json
 
     # Optional: Debugging step to confirm lock file exists
     - name: Check if package-lock.json exists
