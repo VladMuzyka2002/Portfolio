@@ -7,7 +7,7 @@ const Socials = ({ isOpen, toggle }) => {
       <button onClick={toggle}>My Socials</button>
       <div className={`section-content ${isOpen ? 'open' : ''}`}>
         <h2>My Socials</h2>
-        <p>LinkedIn, GitHub, Twitter, etc.</p>
+        <p>LinkedIn, GitHub, Twitter, Reddit, etc.</p>
       </div>
     </div>
   );
