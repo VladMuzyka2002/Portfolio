@@ -9,8 +9,8 @@ jobs:
     runs-on: self-hosted
     defaults:
       run: 
-        working-directory: frontend
-      
+        working-directory: frontend  # Ensure this matches the relative path to your frontend folder
+
     strategy:
       matrix:
         node-version: [22.x]
@@ -28,24 +28,20 @@ jobs:
 
     # Optional: Debugging step to confirm lock file exists
     - name: Check if package-lock.json exists
-      run: ls -la ./Portfolio/Portfolio/frontend/package-lock.json
+      run: ls -la package-lock.json
 
     # Clear npm cache in the frontend directory
     - name: Clear npm cache (Frontend)
       run: npm cache clean --force
-      working-directory: ./Portfolio/Portfolio/frontend
 
     # Install dependencies for the frontend
     - name: Install frontend dependencies
       run: npm install
-      working-directory: ./Portfolio/Portfolio/frontend
 
     # Build the frontend project
     - name: Build frontend
       run: npm run build --if-present
-      working-directory: ./Portfolio/Portfolio/frontend
 
     # Run frontend tests
     - name: Run frontend tests
       run: npm test
-      working-directory: ./Portfolio/Portfolio/frontend
