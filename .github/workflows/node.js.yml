@@ -22,7 +22,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        cache-dependency-path: ./Portfolio/Portfolio/frontend/package-lock.json  # Explicitly set the cache path for frontend
+        cache-dependency-path: ./Portfolio/Portfolio/frontend/package-lock.json  # Ensure the correct path here
+
+    # Optional: Debugging step to confirm lock file exists
+    - name: Check if package-lock.json exists
+      run: ls -la ./Portfolio/Portfolio/frontend/package-lock.json
 
     # Clear npm cache in the frontend directory
     - name: Clear npm cache (Frontend)
