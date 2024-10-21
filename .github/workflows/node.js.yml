@@ -26,7 +26,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        cache-dependency-path: ./Portfolio/Portfolio/frontend/package-lock.json
+        cache-dependency-path: ./frontend/package-lock.json
 
     # Optional: Debugging step to confirm lock file exists
     - name: Check if package-lock.json exists
