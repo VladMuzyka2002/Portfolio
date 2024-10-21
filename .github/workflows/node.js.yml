@@ -22,26 +22,24 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        cache-dependency-path: ./Portfolio/Portfolio/frontend
-
-    # Now target your frontend subdirectory for npm commands
+        cache-dependency-path: ./Portfolio/Portfolio/frontend/package-lock.json  # Explicitly set the cache path for frontend
 
     # Clear npm cache in the frontend directory
     - name: Clear npm cache (Frontend)
       run: npm cache clean --force
-      working-directory: ./Portfolio/Portfolio/frontend  # Use your frontend directory here
+      working-directory: ./Portfolio/Portfolio/frontend
 
     # Install dependencies for the frontend
     - name: Install frontend dependencies
       run: npm install
-      working-directory: ./Portfolio/Portfolio/frontend  # Use your frontend directory here
+      working-directory: ./Portfolio/Portfolio/frontend
 
     # Build the frontend project
     - name: Build frontend
       run: npm run build --if-present
-      working-directory: ./Portfolio/Portfolio/frontend  # Use your frontend directory here
+      working-directory: ./Portfolio/Portfolio/frontend
 
     # Run frontend tests
     - name: Run frontend tests
       run: npm test
-      working-directory: ./Portfolio/Portfolio/frontend  # Use your frontend directory here
+      working-directory: ./Portfolio/Portfolio/frontend
