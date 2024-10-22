@@ -48,6 +48,14 @@ jobs:
     - name: Run frontend tests
       run: npm test
 
+    - name: Stop previous PM2 process
+      run: |
+        pm2 stop all || true
+        pm2 delete all || true
+    
+    - name: Start the server using PM2
+      run: pm2 start npm --name "testapp" -- run start
+
   build-be:
     runs-on: self-hosted
     defaults:
