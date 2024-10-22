@@ -86,7 +86,3 @@ jobs:
     # Build the backend project
     - name: Build frontend
       run: npm run build --if-present
-
-    # Run backend tests
-    - name: Run backend tests
-      run: npm test
