@@ -44,7 +44,7 @@ const Skills = ({ isOpen, toggle }) => {
           <li>
             <h4>Concepts</h4>
             <ul>
-              <li>Object Oriented Programming7</li>
+              <li>Object Oriented Programming</li>
               <li>Concurrent Programming</li>
               <li>Agile</li>
               <li>Design Patterns</li>
