@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'; // Assuming you have a Navbar componen
 import Home from './pages/Home'; // Home page component
 import Projects from './pages/Projects'; // Home page component
 import Login from './pages/Login'; // Home page component
+import "./App.css"; // Import your CSS for styling
 
 function App() {
   return (

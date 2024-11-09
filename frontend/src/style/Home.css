@@ -1,67 +1,87 @@
 /* General Container */
 .home-container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-    background-color: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    font-family: 'Roboto', sans-serif; /* Apply the font here */
-  }
-  
-  /* Header Section */
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  /* Removed background-color to make it transparent */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Header Section */
+.home-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.home-summary p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin: 0 auto 20px;
+  max-width: 700px;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Styling for emphasis */
+.home-summary p span {
+  color: #3498db;
+  font-weight: bold;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
   .home-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
-  }
-  
-  .profile-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-right: 20px;
-  }
-  
-  .home-summary p {
-    font-size: 1.2em; /* Larger text size for readability */
-    line-height: 1.6; /* Improve line spacing for readability */
-    margin: 0 auto 20px; /* Add margin for spacing */
-    max-width: 700px; /* Limit width for better readability on large screens */
-    color: #333; /* Dark gray color for better contrast and readability */
-    font-family: 'Roboto', sans-serif; /* Use the modern font */
-  }
-  
-  /* Styling for emphasis */
-  .home-summary p span {
-    color: #3498db; /* Highlighted color for specific text */
-    font-weight: bold; /* Bold text for emphasis */
+    flex-direction: column;
   }
 
-  
-  /* Mobile Responsiveness */
-  @media (max-width: 768px) {
-    .home-header {
-      flex-direction: column;
-    }
-  
-    .profile-image {
-      margin-right: 0;
-      margin-bottom: 20px;
-    }
-  
-    .section button {
-      font-size: 1em;
-    }
-  
-    .section-content h2 {
-      font-size: 1.5em;
-    }
-  
-    .section-content p, .section-content ul {
-      font-size: 1em;
-    }
+  .profile-image {
+    margin-right: 0;
+    margin-bottom: 20px;
   }
-  
+
+  .section button {
+    font-size: 1em;
+  }
+
+  .section-content h2 {
+    font-size: 1.5em;
+  }
+
+  .section-content p, .section-content ul {
+    font-size: 1em;
+  }
+}
+
+/* Home.css */
+.home-container {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.home-container.slide-down {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Adjust styles for smooth transitions */
+.home-header,
+.home-summary,
+.profile-image {
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
