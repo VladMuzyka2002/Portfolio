@@ -19,8 +19,6 @@ const Skills = ({ isOpen, toggle }) => {
               <li>C++</li>
               <li>C#</li>
               <li>Racket</li>
-              <li>Context API</li>
-              <li>Redux</li>
             </ul>
           </li>
           <li>
@@ -47,7 +45,7 @@ const Skills = ({ isOpen, toggle }) => {
               <li>Object Oriented Programming</li>
               <li>Concurrent Programming</li>
               <li>Agile</li>
-              <li>Design Patterns</li>
+              <li>Design Patterns</li>zv
               <li>Model-View-Controller Architectural Pattern</li>
               <li>Version Control</li>
               <li>Test Driven Development</li>

@@ -3,46 +3,26 @@
   margin-bottom: 10px;
 }
 
-.section button {
-  width: 100%;
-  padding: 15px;
-  font-size: 1.2em;
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.section button:hover {
-  background-color: #555;
-}
-
+/* Updated section content styling */
 .section-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.6s ease-in-out, padding 0.4s ease-in-out;
-  background-color: #ecf0f1;
-  padding: 0 20px;
+  background-color: rgba(236, 240, 241, 0.8); /* Semi-transparent background */
+  padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
 }
 
-.section-content.open {
-  max-height: 1000px; /* Large enough to accommodate the content smoothly */
-  padding: 20px;
-}
-
-
-.section-content.open {
-  max-height: 1000px; /* Large enough to accommodate the content smoothly */
-  padding: 20px;
-}
-
+/* Text styling */
 .section-content h2 {
   font-size: 1.8em;
   margin-bottom: 10px;
+  color: #333;
+}
+
+.section-content p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #555;
 }
 
 /* Flexbox layout for education information */
@@ -66,4 +46,9 @@
   text-align: center;
   margin-top: 10px;
   font-size: 1.1em;
+}
+
+/* Optional: Add hover effect for semi-transparent background */
+.section-content:hover {
+  background-color: rgba(236, 240, 241, 1); /* Fully opaque on hover */
 }

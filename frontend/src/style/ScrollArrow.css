@@ -1,0 +1,73 @@
+/* ScrollArrow.css */
+.scroll-arrow {
+  position: absolute;
+  top: 80vh;         /* Position it near the top of the viewport */
+  left: 50%;         /* Center horizontally */
+  transform: translateX(-50%);
+  opacity: 1;
+  pointer-events: none;
+  z-index: 1000;
+  display: block;
+  transition: opacity 0.3s ease; /* Smooth fade transition */
+}
+
+/* Default pulsating animation when the arrow is in view */
+.scroll-arrow.visible img {
+  animation: pulsate 2s infinite ease-in-out; /* Pulsate gently */
+}
+
+/* Animation for when the page is at the top (on load) */
+.scroll-arrow.visible img {
+  animation: scaleUp 1s ease-out forwards, pulsate 2s infinite ease-in-out;
+}
+
+/* Animation for when the page is scrolled away from the top */
+.scroll-arrow.invisible img {
+  animation: scaleDown 1s ease-in forwards;
+}
+
+/* Keyframe for scaling up the arrow from nothing to big */
+@keyframes scaleUp {
+  0% {
+    transform: scale(0); /* Start from nothing */
+    opacity: 0;          /* Fully transparent */
+  }
+  100% {
+    transform: scale(1.5); /* End at a smaller but noticeable size */
+    opacity: 1;            /* Fully opaque */
+  }
+}
+
+/* Keyframe for scaling down the arrow from big to nothing */
+@keyframes scaleDown {
+  0% {
+    transform: scale(1.5); /* Start at the smaller, scaled size */
+    opacity: 1;            /* Fully opaque */
+  }
+  100% {
+    transform: scale(0); /* Shrink to nothing */
+    opacity: 0;          /* Fade out */
+  }
+}
+
+/* Pulsating animation for a subtle breathing effect */
+@keyframes pulsate {
+  0%, 100% {
+    transform: scale(1.5); /* Pulsate from normal to slightly bigger size */
+  }
+  50% {
+    transform: scale(1.4); /* Slight shrink in the middle */
+  }
+}
+
+.scroll-arrow img {
+  width: 120px;  /* Smaller initial width for the arrow */
+  height: auto;  /* Maintain aspect ratio */
+  display: block;
+  transition: transform 0.3s ease; /* Smooth transition for scale changes */
+}
+
+.scroll-arrow img:hover {
+  transform: translateY(-10px);  /* Hover effect to move it up */
+  filter: brightness(1.5) drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2)); /* Add glow effect */
+}
