@@ -1,0 +1,12 @@
+/* Black bar styles */
+.black-bar {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Height of the black bar */
+    background-color: black;
+    z-index: 20; /* Ensure the bar is above the pages */
+    bottom: -80px; /* Initially, place the bar just off-screen at the bottom */
+    transition: bottom 0.3s ease-out; /* Smooth transition when moving up */
+  }
+  

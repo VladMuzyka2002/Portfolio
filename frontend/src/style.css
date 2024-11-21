@@ -1,12 +1,5 @@
 /* Set background color to pink and text color to blue */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-image: url('/autumn.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    overflow-x: hidden;
-  }
+    background-color: pink;
+    color: blue;
+}
