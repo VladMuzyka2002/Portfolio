@@ -1,87 +1,98 @@
-/* General Container */
-.home-container {
-  width: 80%;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
-  /* Removed background-color to make it transparent */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  font-family: 'Roboto', sans-serif;
-  opacity: 0;
-  transform: translateY(-50px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  height: 100%; /* Ensures full height for the body */
 }
 
-/* Header Section */
-.home-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 30px;
+.box-container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.profile-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin-right: 20px;
+.box {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  bottom: 0;
+  left: 0;
+  transition: transform 0.1s ease-out; /* Use transform instead of height */
+  background-size: cover;
+  background-position: center;
+  border: 5px solid black;
+  box-sizing: border-box;
 }
 
-.home-summary p {
-  font-size: 1.2em;
-  line-height: 1.6;
-  margin: 0 auto 20px;
-  max-width: 700px;
-  color: #333;
-  font-family: 'Roboto', sans-serif;
+
+#box1 {
+  background-image: url('../../public/images/code.jpg'); /* Set the background image for box1 */
+  z-index: 5;
 }
 
-/* Styling for emphasis */
-.home-summary p span {
-  color: #3498db;
+#box2 {
+  background-image: url('../../public/images/winter.jpg'); /* Set the background image for box2 */
+  z-index: 4;
+}
+
+#box3 {
+  background-image: url('../../public/images/autumn.avif'); /* Set the background image for box3 */
+  z-index: 3;
+}
+
+#box4 {
+  background-image: url('../../public/images/winter.jpg'); /* Set the background image for box4 */
+  z-index: 2;
+}
+
+#box5 {
+  background-image: url('../../public/images/winter.jpg'); /* Set the background image for box5 */
+  z-index: 1;
+}
+.tip-header {
+  font-size: 2em;
   font-weight: bold;
-}
+  margin-bottom: 10px;
+  color: white;  /* Text color */
+  text-shadow: 
+      1px 1px 0px black,  /* Top-Left Shadow */
+      -1px 1px 0px black, /* Top-Right Shadow */
+      1px -1px 0px black, /* Bottom-Left Shadow */
+      -1px -1px 0px black, /* Bottom-Right Shadow */
+      0px 1px 0px black,  /* Top */
+      0px -1px 0px black, /* Bottom */
+      1px 0px 0px black,  /* Right */
+      -1px 0px 0px black; /* Left */
+      }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .home-header {
-    flex-direction: column;
-  }
-
-  .profile-image {
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
-
-  .section button {
-    font-size: 1em;
-  }
-
-  .section-content h2 {
-    font-size: 1.5em;
-  }
-
-  .section-content p, .section-content ul {
-    font-size: 1em;
-  }
-}
-
-/* Home.css */
-.home-container {
-  opacity: 0;
-  transform: translateY(-50px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.home-container.slide-down {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Adjust styles for smooth transitions */
-.home-header,
-.home-summary,
-.profile-image {
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
+.tip-content {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: white;  /* Text color */
+  text-shadow: 
+      1px 1px 0px black,  /* Top-Left Shadow */
+      -1px 1px 0px black, /* Top-Right Shadow */
+      1px -1px 0px black, /* Bottom-Left Shadow */
+      -1px -1px 0px black, /* Bottom-Right Shadow */
+      0px 1px 0px black,  /* Top */
+      0px -1px 0px black, /* Bottom */
+      1px 0px 0px black,  /* Right */
+      -1px 0px 0px black; /* Left */
+      }
+.box-footer {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: white;  /* Text color */
+  text-shadow: 
+      1px 1px 0px black,  /* Top-Left Shadow */
+      -1px 1px 0px black, /* Top-Right Shadow */
+      1px -1px 0px black, /* Bottom-Left Shadow */
+      -1px -1px 0px black, /* Bottom-Right Shadow */
+      0px 1px 0px black,  /* Top */
+      0px -1px 0px black, /* Bottom */
+      1px 0px 0px black,  /* Right */
+      -1px 0px 0px black; /* Left */
+      }

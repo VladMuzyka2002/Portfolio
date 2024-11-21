@@ -1,0 +1,104 @@
+/* General container */
+.title-segment-container {
+  display: flex;
+  flex-direction: row; /* Default: horizontal layout */
+  width: 100vw; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  box-sizing: border-box; /* Include borders in dimensions */
+}
+
+/* Left half - image section */
+.title-segment-image {
+  flex: 1; /* Take up 50% of the container */
+  display: flex;
+  justify-content: center; /* Center image horizontally */
+  align-items: center; /* Center image vertically */
+  box-sizing: border-box; /* Include border in sizing */
+}
+
+.title-segment-image img {
+  width: 60%; /* Image takes 80% of its container's width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 50%; /* Makes the image circular */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+}
+
+/* Right half - text section */
+.title-segment {
+  flex: 1; /* Take up 50% of the container */
+  display: flex;
+  justify-content: center; /* Center inner content horizontally */
+  align-items: center; /* Center inner content vertically */
+  box-sizing: border-box; /* Include border and padding in sizing */
+  position: relative;
+}
+
+/* Inner content box */
+.title-segment-content {
+  padding: 4%; /* Add padding for spacing */
+  background-image: url('../../public/images/slide1.jpg'); /* Replace this with your image URL */
+  background-size: cover; /* Cover the whole container */
+  background-position: center center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent background repetition */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+  box-sizing: border-box; /* Include border and padding in sizing */
+  width: 80%; /* Take up 80% of the right half's width */
+  max-width: 600px; /* Limit max width */
+  text-align: center;
+  height: auto; /* Let height adjust dynamically based on content */
+  display: flex;
+  flex-direction: column; /* Arrange title and description vertically */
+  justify-content: space-between; /* Space out content to fill the box */
+  color: white; /* Adjust text color to be readable over the image */
+}
+
+/* Title and paragraph styles */
+.title-segment-content h1 {
+  font-family: 'Merriweather', serif; /* Elegant serif font for title */
+  font-size: 3vw; /* Larger title that scales with viewport */
+  font-weight: bold;
+  margin: 0;
+  color: #fff; /* Light text color for readability */
+  line-height: 1.2; /* Adjust line height for better spacing */
+}
+
+.title-segment-content p {
+  font-family: 'Open Sans', sans-serif; /* Clean sans-serif font for description */
+  font-size: 1.5vw; /* Larger font for description */
+  color: #fff; /* Light color for text over the background image */
+  margin-top: auto; /* Push description to the bottom of the content box */
+  line-height: 1.6; /* Adjust line height for readability */
+  word-wrap: break-word; /* Break long words if necessary */
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .title-segment-container {
+    flex-direction: column; /* Stack elements vertically */
+  }
+
+  .title-segment-image,
+  .title-segment {
+    flex: none;
+    width: 100%; /* Take up full width */
+    height: 50vh; /* Each takes up half the viewport height */
+  }
+
+  .title-segment-content {
+    width: 90%; /* Adjust content width for smaller screens */
+    height: auto; /* Let the height adjust naturally for smaller screens */
+  }
+
+  .title-segment-content h1 {
+    font-size: 5vw; /* Increase title size on smaller screens */
+  }
+
+  .title-segment-content p {
+    font-size: 2.5vw; /* Increase description font size on smaller screens */
+  }
+
+  .title-segment-image img {
+    width: 50%; /* Reduce image size for smaller screens */
+  }
+}
