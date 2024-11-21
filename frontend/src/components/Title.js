@@ -18,9 +18,7 @@ const Title = () => {
       <div className="title-right">
         <h1 className="title-name">Vlad Muzyka</h1>
         <p className="title-description">
-          Hello and welcome to my portfolio! Please click on the segments
-          below to learn more about me, or visit my accomplishments in the
-          Events tab up above!
+          Hello and welcome to my portfolio! Please scroll down to see more about me, or swipe up if you are on a mobile device!
         </p>
       </div>
 

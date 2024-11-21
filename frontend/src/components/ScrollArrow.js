@@ -32,7 +32,7 @@ const ScrollArrow = () => {
       role="button"
       aria-label="Scroll down"
     >
-      <img src="/images/downarrow.png" alt="Scroll Down" />
+      <img src="/images/downarrowwhite.png" alt="Scroll Down" />
     </div>
   );
 };

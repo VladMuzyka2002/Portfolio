@@ -36,7 +36,7 @@
 /* Inner content box */
 .title-segment-content {
   padding: 4%; /* Add padding for spacing */
-  background-image: url('../../public/images/slide1.jpg'); /* Replace this with your image URL */
+  background-image: url('../../public/images/slide2.jpg'); /* Replace this with your image URL */
   background-size: cover; /* Cover the whole container */
   background-position: center center; /* Center the background image */
   background-repeat: no-repeat; /* Prevent background repetition */
@@ -55,21 +55,22 @@
 
 /* Title and paragraph styles */
 .title-segment-content h1 {
-  font-family: 'Merriweather', serif; /* Elegant serif font for title */
-  font-size: 3vw; /* Larger title that scales with viewport */
+  font-family: 'Brush Script MT', monospace; /* Elegant serif font for title */
+  font-size: 2.8vw; /* Larger title that scales with viewport */
   font-weight: bold;
   margin: 0;
-  color: #fff; /* Light text color for readability */
+  color: black; /* Light text color for readability */
   line-height: 1.2; /* Adjust line height for better spacing */
 }
 
 .title-segment-content p {
-  font-family: 'Open Sans', sans-serif; /* Clean sans-serif font for description */
+  font-family: 'Courier New', monospace; /* Clean sans-serif font for description */
   font-size: 1.5vw; /* Larger font for description */
-  color: #fff; /* Light color for text over the background image */
+  color: black; /* Light color for text over the background image */
   margin-top: auto; /* Push description to the bottom of the content box */
   line-height: 1.6; /* Adjust line height for readability */
   word-wrap: break-word; /* Break long words if necessary */
+  padding: 8px;
 }
 
 /* Responsive layout for smaller screens */
