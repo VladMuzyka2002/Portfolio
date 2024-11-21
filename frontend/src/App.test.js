@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import TitleSegment from './components/homepage/TitleSegment';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/Vlad Muzyka's Portfilio/i);
+test('renders title segment correctly', () => {
+  render(<TitleSegment />);
+  const linkElement = screen.getByText(/Vlad Muzyka's Portfolio/i);
   expect(linkElement).toBeInTheDocument();
 });
