@@ -16,7 +16,7 @@ const Title = () => {
 
       {/* Right half with name at the top and description below */}
       <div className="title-right">
-        <h1 className="title-name">Vlad Muzyka</h1>
+        <h1 className="title-name">Vlad Muzyka's Portfolio</h1>
         <p className="title-description">
           Hello and welcome to my portfolio! Please scroll down to see more about me, or swipe up if you are on a mobile device!
         </p>
