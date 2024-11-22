@@ -18,17 +18,19 @@ body, html {
   height: 100vh;
   bottom: 0;
   left: 0;
-  transition: transform 0.1s ease-out; /* Use transform instead of height */
+  transition: transform 0.1s ease-out;
   background-size: cover;
   background-position: center;
   border: 5px solid black;
   box-sizing: border-box;
+  transform-origin: bottom; /* Ensures transformation starts from the bottom edge */
 }
 
 
 #box1 {
   background-image: url('../../public/images/code.jpg'); /* Set the background image for box1 */
   z-index: 5;
+
 }
 
 #box2 {
