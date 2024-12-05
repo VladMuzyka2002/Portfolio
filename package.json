@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@babel/runtime": "^7.26.0"
+    "@babel/runtime": "^7.26.0",
+    "react-dom": "^18.3.1"
   }
 }

@@ -33,7 +33,7 @@
     opacity: 0;          /* Fully transparent */
   }
   100% {
-    transform: scale(1.5); /* End at a smaller but noticeable size */
+    transform: scale(0.9); /* 60% size (scale down to 90%) */
     opacity: 1;            /* Fully opaque */
   }
 }
@@ -41,7 +41,7 @@
 /* Keyframe for scaling down the arrow from big to nothing */
 @keyframes scaleDown {
   0% {
-    transform: scale(1.5); /* Start at the smaller, scaled size */
+    transform: scale(0.9); /* Start at 60% of the size */
     opacity: 1;            /* Fully opaque */
   }
   100% {
@@ -53,15 +53,15 @@
 /* Pulsating animation for a subtle breathing effect */
 @keyframes pulsate {
   0%, 100% {
-    transform: scale(1.5); /* Pulsate from normal to slightly bigger size */
+    transform: scale(0.9); /* Pulsate from normal size (60%) */
   }
   50% {
-    transform: scale(1.4); /* Slight shrink in the middle */
+    transform: scale(0.85); /* Slight shrink in the middle */
   }
 }
 
 .scroll-arrow img {
-  width: 120px;  /* Smaller initial width for the arrow */
+  width: 72px;  /* 60% of the original 120px size */
   height: auto;  /* Maintain aspect ratio */
   display: block;
   transition: transform 0.3s ease; /* Smooth transition for scale changes */
