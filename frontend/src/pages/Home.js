@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import TitleSegment from '../components/homepage/TitleSegment';
 import '../style/Home.css';
+import AboutMe from '../components/homepage/AboutMe';
 
 const Home = () => {
   useEffect(() => {
@@ -49,7 +50,7 @@ const Home = () => {
   return (
     <div className="box-container">
       <div id="box1" className="box"><TitleSegment /></div>
-      <div id="box2" className="box"></div>
+      <div id="box2" className="box"><AboutMe/></div>
       <div id="box3" className="box"></div>
       <div id="box4" className="box"></div>
       <div id="box5" className="box"></div>
